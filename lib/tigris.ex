@@ -70,7 +70,7 @@ defmodule Tigris do
   def presign_post(key) do
     :s3
     |> ExAws.Config.new([])
-    |> S3.presigned_url(:post, bucket!(), key, [])
+    |> S3.presigned_post(bucket!(), key, [])
   end
 
   def get(key, range \\ nil) do
