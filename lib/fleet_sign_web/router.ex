@@ -20,6 +20,11 @@ defmodule FleetSignWeb.Router do
     post "/sign", PageController, :presign
   end
 
+  scope "/", FleetSignWeb do
+    pipe_through :browser
+    live "/", ActionLive
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", FleetSignWeb do
   #   pipe_through :api
