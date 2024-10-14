@@ -10,7 +10,7 @@ defmodule FleetSignWeb.PageController do
         "method" => method
       })
       when secret == @open_secret do
-    path = Path.join(@namepsace, key)
+    path = Path.join(@namespace, key)
 
     presign =
       case method do
