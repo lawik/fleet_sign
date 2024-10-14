@@ -18,6 +18,7 @@ defmodule FleetSignWeb.Router do
     pipe_through :api
 
     post "/sign", PageController, :presign
+    get "/namespace", PageController, :namespace
   end
 
   scope "/", FleetSignWeb do

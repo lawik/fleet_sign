@@ -3,6 +3,10 @@ defmodule FleetSignWeb.PageController do
 
   @open_secret "ti2zRfSCr3ITpMU9ReghbGvsy8EOW+VbfAfy18oe59o="
   @namespace "redo"
+
+
+  def namespace(conn, _), do: json(conn, %{namespace: @namespace})
+
   def presign(conn, %{
         "key" => key,
         "secret" => secret,
