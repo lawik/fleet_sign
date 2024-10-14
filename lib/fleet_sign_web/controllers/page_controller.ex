@@ -2,6 +2,7 @@ defmodule FleetSignWeb.PageController do
   use FleetSignWeb, :controller
 
   @open_secret "ti2zRfSCr3ITpMU9ReghbGvsy8EOW+VbfAfy18oe59o="
+  @namespace "redo"
   def presign(conn, %{
         "key" => key,
         "secret" => secret,
@@ -9,7 +10,7 @@ defmodule FleetSignWeb.PageController do
         "method" => method
       })
       when secret == @open_secret do
-    path = Path.join("shared", key)
+    path = Path.join(@namepsace, key)
 
     presign =
       case method do
